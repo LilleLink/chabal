@@ -1,12 +1,12 @@
 {
-  "name": "chalmersbalancecli",
+  "name": "chabal",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI tool to fetch balance of the student union cards at Chalmers University of Technology",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Simon Engström",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.0.1",
