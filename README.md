@@ -3,6 +3,7 @@ CLI tool to fetch balance of your student union card at Chalmers University of T
 
 # Installation
 - clone this repo into a folder
+- run `npm install`
 - run `npm i -g`
 - all done
 
