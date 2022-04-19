@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 import { program } from 'commander';
-import { balance } from './commands/balance.js';
-import { config } from './commands/config.js';
+import { balance } from './commands/balance';
+import { config } from './commands/config';
 
 // Balance command (default *)
 program

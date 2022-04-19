@@ -1,7 +1,7 @@
 import keytar from 'keytar';
 import chalk from 'chalk';
 
-export async function config(cid, password) {
+export async function config(cid : string, password : string) {
 
     if (cid.includes("@")) {
         console.log(chalk.redBright("ERROR")+
