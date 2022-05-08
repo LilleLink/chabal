@@ -25,11 +25,16 @@ export async function balance() {
 
     const creds = {"Username" : username, "Password" : credentials.password};
     const chabalResponse = await axios.post('https://portal.microdeb.se:44396/api/v1/login/194699f3-1f9e-47a4-8052-df26df0bc114/mps', creds)
-        .then(res => res.data) as ChabalResponse;
+        .then(res => {
+            let chabalInformation : ChabalInformation = res.data.information;
+            let tmp : string = chabalInformation.balance.toString();
+        
+            let balance = tmp.substring(0, tmp.length - 2) + "." + tmp.substring(tmp.length - 2) + "kr";
+            console.log("You have " + chalk.greenBright(balance) + " in your student union card.");
+        }). catch(err => {
+            console.log(chalk.redBright("Failed to fetch balance. Check your credentials."));
+            console.log("Reason: " + err.response.status + " - " + err.response.statusText);
+        });
 
-    let chabalInformation : ChabalInformation = chabalResponse.information;
-    let tmp : string = chabalInformation.balance.toString();
 
-    let balance = tmp.substring(0, tmp.length - 2) + "." + tmp.substring(tmp.length - 2) + "kr";
-    console.log("You have " + chalk.greenBright(balance) + " in your student union card.");
 }
