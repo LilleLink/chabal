@@ -33,7 +33,9 @@ export async function balance() {
             console.log("You have " + chalk.greenBright(balance) + " in your student union card.");
         }). catch(err => {
             console.log(chalk.redBright("Failed to fetch balance. Check your credentials."));
-            console.log("Reason: " + err.response.status + " - " + err.response.statusText);
+            if (err.response) {
+                console.log("Reason: " + err.response.status + " - " + err.response.statusText);
+            }
         });
 
 
